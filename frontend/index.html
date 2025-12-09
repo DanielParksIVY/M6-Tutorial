@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutorial Frontend</title>
+</head>
+<body>
+  <h1>Frontend Connected</h1>
+  <div id="courses"></div>
+
+<script>
+fetch("http://localhost:3000/courses")
+  .then(res=>res.json())
+  .then(data=>{
+    document.getElementById("courses").innerHTML =
+      "<pre>" + JSON.stringify(data,null,2) + "</pre>";
+  });
+</script>
+
+</body>
+</html>
